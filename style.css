@@ -1,0 +1,221 @@
+/* Fonts and Variables */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Noto+Serif:wght@100..900&display=swap');
+
+:root {
+    --primary-color: #e50084;
+    --hover-color: #000;
+    --text-color: #fff;
+    --header-font: 'Noto Serif', serif;
+    --body-font: 'Lato', sans-serif;
+}
+
+/* General Reset */
+body, h1, h2, p, a, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+}
+
+nav .logo img {
+    height: 50px;
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav .menu-item {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav .menu-item:hover {
+    color: var(--hover-color);
+}
+
+.client-area .client-icon {
+    height: 30px;
+    transition: filter 0.3s;
+}
+
+.client-area .client-icon:hover {
+    filter: brightness(0);
+}
+
+/* Header Styles */
+
+
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-family: var(--header-font);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+figure {
+    display: inline-block;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: var(--text-color);
+    padding: 20px 10px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.footer-small-text {
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.social-link img {
+    height: 25px;
+    transition: filter 0.3s;
+}
+
+.social-link img:hover {
+    filter: brightness(0.5);
+}
+
+.legal-links {
+    font-size: 0.8rem;
+    color: #bbb;
+    display: flex;
+    gap: 5px;
+}
+
+.legal-link {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.legal-link:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+}
+
+/* Button Styles */
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    nav .menu {
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
