@@ -5,22 +5,60 @@
     --primary-color: #e50084;
     --hover-color: #000;
     --text-color: #fff;
+    --light-background-color: #fff;
     --header-font: 'Noto Serif', serif;
     --body-font: 'Lato', sans-serif;
     --logo-height: 40px;
-    --side-padding: 15px; /* nav & footer margins and paddings */
+    --side-padding: 15px;
+    /* nav & footer margins and paddings */
 }
 
 /* General Reset */
-body, h1, h2, p, a, img {
+body,
+h1,
+h2,
+p,
+a,
+img {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+/* Button Styles */
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
 }
 
 body {
     font-family: var(--body-font);
     line-height: 1.6;
+}
+
+section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+figure {
+    display: inline-block;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #555;
 }
 
 /* Navigation Styles */
@@ -62,6 +100,7 @@ nav .menu-item:hover {
 
 .client-area .client-icon:hover {
     filter: brightness(0);
+    cursor: pointer;
 }
 
 /* Main Content */
@@ -81,11 +120,12 @@ nav .menu-item:hover {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Img behind text */
+    z-index: -1;
+    /* Img behind text - No es necesario al final */
 }
 
 .banner-content {
-    position:absolute;
+    position: absolute;
     top: 50%;
     left: 15%;
     transform: translateY(-50%);
@@ -109,20 +149,108 @@ section h2 {
     margin-bottom: 10px;
 }
 
-section p {
-    font-size: 1rem;
+/* Section: Per què Active360 */
+.why-active360 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px var(--side-padding);
+    background-color: var(--light-background-color);
+}
+
+.content-left,
+.content-right {
+    flex: 1;
+}
+
+.content-left {
+    max-width: 60%;
+    margin-left: 10%;
+}
+
+.content-left h2 {
+    font-family: var(--header-font);
+    font-size: 2rem;
     margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
-figure {
-    display: inline-block;
-    text-align: center;
+.content-left p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-figcaption {
+.content-left strong {
+    font-weight: bold;
+}
+
+.content-right {
+    margin-right: 10%;
+}
+
+.content-right form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.content-right label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.content-right input[type="text"],
+.content-right input[type="email"] {
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.content-right input::placeholder {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.privacy-info {
     font-size: 0.8rem;
-    font-style: italic;
-    color: #555;
+    line-height: 1.4;
+    color: #666;
+    margin-top: 20px;
+    margin-bottom: 0px; /* Reset gral margin */
+    text-align: justify;
+}
+
+.privacy-info strong {
+    font-weight: bold;
+}
+
+.privacy-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.privacy-info a:hover {
+    text-decoration: underline;
+}
+
+.accept-policy {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.accept-policy label {
+    font-size: 0.8rem;
+}
+
+.accept-policy label:hover, input:hover {
+    cursor: pointer;
 }
 
 /* Footer Styles */
@@ -156,7 +284,7 @@ footer {
 }
 
 .footer-right {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-right: var(--side-padding);
@@ -175,6 +303,7 @@ footer {
 
 .social-link img:hover {
     filter: brightness(0.5);
+
 }
 
 .legal-links {
@@ -194,22 +323,9 @@ footer {
     color: var(--primary-color);
 }
 
-/* Button Styles */
-button {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: var(--hover-color);
-}
 
 /* Responsive Design */
+
 @media (max-width: 1024px) {
     .footer-container {
         flex-direction: column;
@@ -240,8 +356,8 @@ button:hover {
     }
 }
 
-
 @media (max-width: 768px) {
+    /* Footer Responsive */
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -252,6 +368,7 @@ button:hover {
         text-align: center;
     }
 
+    /* Banner Responsive */
     .banner-content h1 {
         font-size: 1.8rem;
     }
@@ -259,6 +376,19 @@ button:hover {
     .banner-content {
         left: 10%;
         max-width: 50%;
+    }
+
+    /* Why Active360 Responsive */
+    .why-active360 {
+        flex-direction: column;
+    }
+
+    .content-left, .content-right {
+        max-width: 100%;
+    }
+
+    .content-right form {
+        max-width: 100%;
     }
 }
 
