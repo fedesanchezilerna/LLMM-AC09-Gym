@@ -151,11 +151,26 @@ section h2 {
 
 /* Section: Per què Active360 */
 .why-active360 {
+    justify-content: space-between;
+    padding: 40px var(--side-padding);
+    background-color: var(--light-background-color);
+}
+
+.section-title {
+    margin-bottom: 30px;
+    margin-left: 10%;
+}
+
+.section-title h2 {
+    font-family: var(--header-font);
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.columns {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    padding: 40px var(--side-padding);
-    background-color: var(--light-background-color);
 }
 
 .content-left,
@@ -166,13 +181,6 @@ section h2 {
 .content-left {
     max-width: 60%;
     margin-left: 10%;
-}
-
-.content-left h2 {
-    font-family: var(--header-font);
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
 }
 
 .content-left p {
@@ -206,7 +214,6 @@ section h2 {
     border: 2px solid var(--primary-color);
     border-radius: 5px;
     font-size: 1rem;
-    width: 100%;
 }
 
 .content-right input::placeholder {
@@ -214,12 +221,18 @@ section h2 {
     color: #aaa;
 }
 
+.content-right button {
+    font-size: 0.9rem;
+    max-width: 60%;
+}
+
 .privacy-info {
     font-size: 0.8rem;
     line-height: 1.4;
     color: #666;
     margin-top: 20px;
-    margin-bottom: 0px; /* Reset gral margin */
+    margin-bottom: 0px;
+    /* Reset gral margin */
     text-align: justify;
 }
 
@@ -249,7 +262,8 @@ section h2 {
     font-size: 0.8rem;
 }
 
-.accept-policy label:hover, input:hover {
+.accept-policy label:hover,
+input:hover {
     cursor: pointer;
 }
 
@@ -268,10 +282,6 @@ footer {
     margin: 0 auto;
     margin-left: var(--side-padding);
 }
-
-/*.footer-left {
-     text-align: left;
-}*/
 
 .footer-logo {
     height: 40px;
@@ -357,6 +367,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+
     /* Footer Responsive */
     .footer-container {
         flex-direction: column;
@@ -380,15 +391,29 @@ footer {
 
     /* Why Active360 Responsive */
     .why-active360 {
+        padding: 20px;
+    }
+
+    .columns {
         flex-direction: column;
     }
 
-    .content-left, .content-right {
+    .section-title {
+        margin: 0;
+    }
+
+    .content-left,
+    .content-right {
         max-width: 100%;
+        margin: 0;
     }
 
     .content-right form {
         max-width: 100%;
+    }
+
+    .content-right button {
+        max-width: 40%;
     }
 }
 
@@ -417,5 +442,33 @@ footer {
     .banner-content {
         left: 10%;
         max-width: 60%;
+    }
+
+    /* Why Active360 Responsive */
+    .why-active360 {
+        padding: 20px;
+    }
+
+    .columns {
+        flex-direction: column;
+    }
+
+    .section-title {
+        margin: 0;
+    }
+
+    .content-left,
+    .content-right {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .content-right form {
+        max-width: 100%;
+    }
+
+    .content-right button {
+        font-size: 0.7rem;
+        max-width: 65%;
     }
 }
