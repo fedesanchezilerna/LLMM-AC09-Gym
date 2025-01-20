@@ -6,6 +6,7 @@
     --hover-color: #000;
     --text-color: #fff;
     --light-background-color: #fff;
+    --light-primary-color-background: #fbe3ef;
     --header-font: 'Noto Serif', serif;
     --body-font: 'Lato', sans-serif;
     --logo-height: 40px;
@@ -101,6 +102,72 @@ nav .menu-item:hover {
 .client-area .client-icon:hover {
     filter: brightness(0);
     cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: var(--text-color);
+    padding: 20px var(--side-padding);
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-left: var(--side-padding);
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.footer-small-text {
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: var(--side-padding);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.social-link img {
+    height: 25px;
+    transition: filter 0.3s;
+}
+
+.social-link img:hover {
+    filter: brightness(0.5);
+
+}
+
+.legal-links {
+    font-size: 0.8rem;
+    color: #bbb;
+    display: flex;
+    gap: 5px;
+}
+
+.legal-link {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.legal-link:hover {
+    color: var(--primary-color);
 }
 
 /* Main Content */
@@ -223,7 +290,7 @@ section h2 {
 
 .content-right button {
     font-size: 0.9rem;
-    max-width: 60%;
+    max-width: 65%;
 }
 
 .privacy-info {
@@ -267,72 +334,58 @@ input:hover {
     cursor: pointer;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: var(--text-color);
-    padding: 20px var(--side-padding);
-    font-size: 0.9rem;
-}
-
-.footer-container {
+/* Section: Progression | Workout | Nutrition */
+.services {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    margin-left: var(--side-padding);
+    gap: 20px;
+    padding: 40px 10%;
+    background-color: var(--light-primary-color-background);
 }
 
-.footer-logo {
-    height: 40px;
-    margin-bottom: 10px;
+.service-card {
+    flex: 1;
+    background-color: var(--light-background-color);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* for bottom border */
 }
 
-.footer-small-text {
-    font-size: 0.8rem;
-    color: #bbb;
+.service-card img {
+    width: 120px;
+    margin-bottom: 15px;
 }
 
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: var(--side-padding);
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 10px;
-}
-
-.social-link img {
-    height: 25px;
-    transition: filter 0.3s;
-}
-
-.social-link img:hover {
-    filter: brightness(0.5);
-
-}
-
-.legal-links {
-    font-size: 0.8rem;
-    color: #bbb;
-    display: flex;
-    gap: 5px;
-}
-
-.legal-link {
-    text-decoration: none;
-    color: #bbb;
-    transition: color 0.3s;
-}
-
-.legal-link:hover {
+.service-card h3 {
+    font-family: var(--header-font);
+    font-size: 1.5rem;
     color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
+.service-card hr {
+    width: 100%;
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 10px auto;
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px; 
+    background-color: var(--primary-color);
+}
 
 /* Responsive Design */
 
@@ -415,6 +468,12 @@ footer {
     .content-right button {
         max-width: 40%;
     }
+
+    .services {
+        flex-direction: column; /* Mostrar en columna */
+        gap: 20px; /* Espaciado entre las cards */
+        padding: 20px; /* Márgenes más pequeños */
+    }
 }
 
 @media (max-width: 480px) {
@@ -470,5 +529,21 @@ footer {
     .content-right button {
         font-size: 0.7rem;
         max-width: 65%;
+    }
+
+    .services {
+        padding: 15px; /* Márgenes aún más pequeños */
+    }
+
+    .service-card img {
+        width: 80px; /* Imágenes más pequeñas */
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem; /* Títulos más pequeños */
+    }
+
+    .service-card p {
+        font-size: 0.9rem; /* Texto más pequeño */
     }
 }
