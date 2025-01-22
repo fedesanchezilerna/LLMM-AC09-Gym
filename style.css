@@ -187,8 +187,7 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
-    /* Img behind text - No es necesario al final */
+    z-index: -1; /* Img behind text - No es necesario al final */
 }
 
 .banner-content {
@@ -214,6 +213,10 @@ section h2 {
     font-family: var(--header-font);
     font-size: 2rem;
     margin-bottom: 10px;
+}
+
+.banner-title-bg mark {
+    background-color: var(--primary-color);
 }
 
 /* Section: Per què Active360 */
@@ -387,6 +390,68 @@ input:hover {
     background-color: var(--primary-color);
 }
 
+/* Section: Blogs */
+.blogs {
+    padding: 40px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    background-color: var(--light-background-color); 
+}
+
+.blog {
+    display: flex;
+    flex-direction: row; 
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.blog figure {
+    margin: 0;
+    margin-top: 20px;
+    flex-shrink: 0;
+}
+
+.blog figcaption {
+    text-align: right;
+    font-size: 0.7rem;
+}
+
+.blog-image {
+    width: 250px;
+    height: auto;
+    transition: transform 1s, opacity 1s;
+}
+
+.blog-image:hover {
+    transform: rotate(5deg);
+    opacity: 0.5;
+}
+
+.blog-content {
+    flex: 1;
+}
+
+.blog-content h3 {
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: left; 
+}
+
+.blog-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.blog-button:hover {
+    background-color: var(--hover-color);
+}
+
 /* Responsive Design */
 
 @media (max-width: 1024px) {
@@ -444,7 +509,7 @@ input:hover {
 
     /* Why Active360 Responsive */
     .why-active360 {
-        padding: 20px;
+        padding: var(--side-padding);
     }
 
     .columns {
@@ -470,9 +535,13 @@ input:hover {
     }
 
     .services {
-        flex-direction: column; /* Mostrar en columna */
-        gap: 20px; /* Espaciado entre las cards */
-        padding: 20px; /* Márgenes más pequeños */
+        flex-direction: column;
+        gap: 20px; 
+        padding: var(--side-padding); 
+    }
+
+    .blogs {
+        padding: var(--side-padding);
     }
 }
 
@@ -532,18 +601,46 @@ input:hover {
     }
 
     .services {
-        padding: 15px; /* Márgenes aún más pequeños */
+        padding: 15px; 
     }
 
     .service-card img {
-        width: 80px; /* Imágenes más pequeñas */
+        width: 80px;
     }
 
     .service-card h3 {
-        font-size: 1.2rem; /* Títulos más pequeños */
+        font-size: 1.2rem; 
     }
 
     .service-card p {
-        font-size: 0.9rem; /* Texto más pequeño */
+        font-size: 0.9rem;
+    }
+
+    /* Blogs responsive */
+    .blog {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .blogs {
+        padding: 20px; 
+    }
+
+    .blog-image {
+        width: 100%;
+    }
+
+    .blog-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .blog-content p {
+        font-size: 0.9rem;
+    }
+
+    .blog-button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
     }
 }
