@@ -906,7 +906,8 @@ input:hover {
     font-size: 1.1rem;
 }
 
-.content-left ul, li {
+.content-left ul,
+li {
     padding-bottom: 15px;
 }
 
@@ -1113,5 +1114,103 @@ figure {
 @media (max-width: 480px) {
     .videos-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Area Client*/
+.client-area-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 78vh;
+    background-color: var(--light-primary-color-background);
+    padding: 20px;
+}
+
+.client-title {
+    font-family: var(--header-font);
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.client-card {
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.client-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.client-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.client-card label {
+    font-weight: bold;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.client-card input {
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Client form links*/
+.client-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.client-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.client-links a:hover {
+    text-decoration: underline;
+}
+
+.client-card button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.client-card button:hover {
+    background-color: var(--hover-color);
+}
+
+@media (max-width: 480px) {
+    .client-card {
+        width: 90%; 
+        max-width: 320px; 
+        padding: 20px;
     }
 }
